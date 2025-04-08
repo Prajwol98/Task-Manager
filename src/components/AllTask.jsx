@@ -24,7 +24,8 @@ const AllTask = () => {
   function deleteData(index) {
     setAddData((prev) => prev.filter((_, i) => i !== index));
     if (index === editIndex) {
-      setEditIndex("");
+      setEditIndex(null);
+      setEditText("")
     }
   }
 
@@ -41,7 +42,9 @@ const AllTask = () => {
     const updateData = [...addData];
     updateData[editIndex] = editText;
     setAddData(updateData);
-    setEditText("");
+    setEditIndex(null)
+    setEditText("")
+    
   }
 
   return (
